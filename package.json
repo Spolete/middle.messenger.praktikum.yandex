@@ -2,7 +2,6 @@
   "name": "middle-messenger-praktikum",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "dependencies": {
     "parcel": "^2.7.0"
   },
