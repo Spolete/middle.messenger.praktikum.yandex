@@ -1,0 +1,26 @@
+{
+  "name": "middle-messenger-praktikum",
+  "version": "1.0.0",
+  "description": "",
+  "dependencies": {
+    "parcel": "^2.7.0"
+  },
+  "devDependencies": {
+    "@anikin/parcel-transformer-handlebars": "^1.0.9"
+  },
+  "scripts": {
+    "dev": "parcel index.hbs",
+    "build": "parcel build index.hbs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Spolete/middle.messenger.praktikum.yandex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Spolete/middle.messenger.praktikum.yandex/issues"
+  },
+  "homepage": "https://github.com/Spolete/middle.messenger.praktikum.yandex#readme"
+}
