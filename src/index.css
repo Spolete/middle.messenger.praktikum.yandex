@@ -63,3 +63,8 @@ dd {
 .link:hover {
     color: rgb(51, 144, 236);
 }
+
+#menu {
+    z-index: 1000;
+    position: sticky;
+}
