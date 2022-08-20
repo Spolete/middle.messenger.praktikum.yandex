@@ -10,5 +10,7 @@ window.addEventListener('DOMContentLoaded', () => {
     app.innerHTML = signIn();
   } else if (window.location.pathname === '/signUp') {
     app.innerHTML = signUp();
+  } else {
+    app.innerHTML = signIn();
   }
 })
