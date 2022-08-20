@@ -1,6 +1,6 @@
 <div class="main">
     <div class="form">
-        <h1 class="form__title">Войти</h1>
+        <h1 class="form__title">Messenger</h1>
         <div class="container__input">
             {{> input type="input" placeholder="Логин" name="login" id='login' }}
         </div>
@@ -8,9 +8,9 @@
             {{> input type="password" placeholder="Пароль" name="password" id='password' }}
         </div>
         <div class="container__button">
-            {{> button text="Продолжить" }}
+            {{> button text="Войти" }}
         </div>
-        {{> button text="Нет аккаунта?" }}
+        <a href="/signUp" class="link">Создать аккаунт</a>
     </div>
 </div>
 

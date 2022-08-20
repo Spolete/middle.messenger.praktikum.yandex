@@ -1,1 +1,2 @@
 import './signIn';
+import './signUp';
