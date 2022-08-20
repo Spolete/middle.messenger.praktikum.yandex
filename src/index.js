@@ -1,8 +1,8 @@
-import template from './index.hbs'
+import signUp from './pages/signUp/signUp.hbs'
 import './components';
 
 window.addEventListener('DOMContentLoaded', () => {
   const app = document.querySelector('#app');
 
-  app.innerHTML = template({variable: 'Hello World!'})
+  app.innerHTML = signUp()
 })
