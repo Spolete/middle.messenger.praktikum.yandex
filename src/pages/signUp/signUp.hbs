@@ -1,0 +1,30 @@
+<div class="main">
+    <div class="form">
+        <h1 class="form__title">Создание аккаунта</h1>
+        <div class="container__input">
+            {{> input type="input" placeholder="Почта" name="mail" id='mail' }}
+        </div>
+        <div class="container__input">
+            {{> input type="input" placeholder="Логин" name="login" id='login' }}
+        </div>
+        <div class="container__input">
+            {{> input type="input" placeholder="Имя" name="name" id='name' }}
+        </div>
+        <div class="container__input">
+            {{> input type="input" placeholder="Фамилия" name="surname" id='surname' }}
+        </div>
+        <div class="container__input">
+            {{> input type="input" placeholder="Телефон" name="phone" id='phone' }}
+        </div>
+        <div class="container__input">
+            {{> input type="password" placeholder="Пароль" name="password" id='password' }}
+        </div>
+        <div class="container__input">
+            {{> input type="password" placeholder="Повторите пароль" name="password2" id='password2' }}
+        </div>
+        <div class="container__button">
+            {{> button text="Продолжить" }}
+        </div>
+        <a href="/signIn" class="link">Есть аккаунт?</a>
+    </div>
+</div>
