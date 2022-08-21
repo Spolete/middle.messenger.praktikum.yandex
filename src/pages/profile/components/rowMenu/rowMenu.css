@@ -1,0 +1,11 @@
+.row__link_normal {
+    color: rgb(51, 144, 236);
+}
+
+.row__link_exit {
+    color: red;
+}
+
+.row__link:hover {
+    color: black;
+}

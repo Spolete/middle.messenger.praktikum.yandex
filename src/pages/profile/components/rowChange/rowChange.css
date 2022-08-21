@@ -1,0 +1,9 @@
+.row__input {
+    outline: none;
+    text-align: right;
+    width: 100%;
+}
+
+.row__input:hover {
+    cursor: pointer;
+}

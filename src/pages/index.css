@@ -1,5 +1,7 @@
 @import './signIn/signIn.css';
 @import './signUp/signUp.css';
+@import './error/error.css';
+@import './profile/index.css';
 
 .container__button {
     width: 100%;
@@ -8,5 +10,4 @@
 
 .container__input {
     width: 100%;
-    margin-top: 20px;
 }
