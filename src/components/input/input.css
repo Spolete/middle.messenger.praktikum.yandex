@@ -1,5 +1,6 @@
 .input {
     position: relative;
+    margin-bottom: 20px;
     padding: 10px 0 0;
     width: 100%;
 }
@@ -53,4 +54,26 @@
 
 .input__field:required, .input__field:invalid {
     box-shadow: none;
+}
+
+.input__error {
+    color: red;
+    text-align: left;
+    font-size: 12px;
+    margin-top: 3px;
+    position: absolute;
+    display: none;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: red;
+}
+
+input:invalid:not(:placeholder-shown) + .input__error {
+    display: block;
+}
+
+input:valid:not(:placeholder-shown) {
+    border-image: linear-gradient(to right, rgb(51, 144, 236), rgb(241, 247, 252));
+    border-image-slice: 1;
 }
