@@ -1,8 +1,9 @@
 .row {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     padding: 15px;
-    justify-content: space-between;
     border-bottom: 2px solid;
     border-image: linear-gradient(to right, rgb(241, 247, 252), rgb(51, 144, 236));
     border-image-slice: 1;
