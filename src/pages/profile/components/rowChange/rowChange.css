@@ -1,4 +1,9 @@
+.row_change {
+    padding: 0;
+}
+
 .row__input {
+    height: 50px;
     outline: none;
     text-align: right;
     width: 100%;

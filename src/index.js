@@ -3,6 +3,7 @@ import signUp from './pages/signUp/signUp.hbs';
 import error from './pages/error/error.hbs';
 import menuLinks from './components/menu/menu.hbs';
 import profileChangeInfo from './pages/profile/modules/changeInfo/changeInfo.hbs';
+import profileChangePassword from './pages/profile/modules/changePassword/changePassword.hbs';
 import profile from './pages/profile/modules/main/main.hbs';
 
 import './pages/';
@@ -26,6 +27,8 @@ window.addEventListener('DOMContentLoaded', () => {
     app.innerHTML = profile();
   } else if (window.location.pathname === '/profileChangeInfo') {
     app.innerHTML = profileChangeInfo();
+  } else if (window.location.pathname === '/profileChangePassword') {
+    app.innerHTML = profileChangePassword();
   } else {
     app.innerHTML = signIn();
   }
