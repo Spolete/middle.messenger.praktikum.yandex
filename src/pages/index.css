@@ -1,5 +1,6 @@
 @import './error/error.css';
 @import './profile/index.css';
+@import './chat/chat.css';
 
 .container__button {
     width: 100%;

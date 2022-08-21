@@ -5,6 +5,7 @@ import menuLinks from './components/menu/menu.hbs';
 import profileChangeInfo from './pages/profile/modules/changeInfo/changeInfo.hbs';
 import profileChangePassword from './pages/profile/modules/changePassword/changePassword.hbs';
 import profile from './pages/profile/modules/main/main.hbs';
+import chat from './pages/chat/chat.hbs';
 
 import './pages/';
 import './pages/profile/components'
@@ -29,6 +30,8 @@ window.addEventListener('DOMContentLoaded', () => {
     app.innerHTML = profileChangeInfo();
   } else if (window.location.pathname === '/profileChangePassword') {
     app.innerHTML = profileChangePassword();
+  } else if (window.location.pathname === '/chat') {
+    app.innerHTML = chat();
   } else {
     app.innerHTML = signIn();
   }
