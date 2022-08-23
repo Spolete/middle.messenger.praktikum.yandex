@@ -1,20 +1,20 @@
-.row {
+.row-profile {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     padding: 15px;
     border-bottom: 2px solid;
-    border-image: linear-gradient(to right, rgb(241, 247, 252), rgb(51, 144, 236));
+    border-image: linear-gradient(to right, var(--main-bg-color), var(--main-color));
     border-image-slice: 1;
 }
 
-.row:last-child {
+.row-profile:last-child {
     border-bottom: none;
 
 }
 
-.row__title {
+.row-profile__title {
     white-space: nowrap;
     color: rgba(153, 153, 153, 1);
 }

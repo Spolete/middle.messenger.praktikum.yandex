@@ -8,7 +8,7 @@
 .input__field {
     width: 100%;
     border: 0;
-    border-bottom: 2px solid #9b9b9b;
+    border-bottom: 2px solid var(--main-latent-color);
     outline: 0;
     font-size: 16px;
     padding: 7px 0;
@@ -32,13 +32,13 @@
     display: block;
     transition: 0.2s;
     font-size: 12px;
-    color: #9b9b9b;
+    color: var(--main-latent-color);
 }
 
 .input__field:focus {
     padding-bottom: 6px;
     border-width: 3px;
-    border-image: linear-gradient(to right, rgb(51, 144, 236), rgb(241, 247, 252));
+    border-image: linear-gradient(to right, var(--main-color), var(--main-bg-color));
     border-image-slice: 1;
 }
 
@@ -48,7 +48,7 @@
     display: block;
     transition: 0.2s;
     font-size: 12px;
-    color: rgb(51, 144, 236);
+    color: var(--main-color);
     font-weight: 700;
 }
 
@@ -57,7 +57,7 @@
 }
 
 .input__error {
-    color: red;
+    color: var(--main-error-color);
     text-align: left;
     font-size: 12px;
     margin-top: 3px;
@@ -66,7 +66,7 @@
 }
 
 input:invalid:not(:placeholder-shown) {
-    border-color: red;
+    border-color: var(--main-error-color);
 }
 
 input:invalid:not(:placeholder-shown) + .input__error {
@@ -74,6 +74,6 @@ input:invalid:not(:placeholder-shown) + .input__error {
 }
 
 input:valid:not(:placeholder-shown) {
-    border-image: linear-gradient(to right, rgb(51, 144, 236), rgb(241, 247, 252));
+    border-image: linear-gradient(to right, var(--main-color), var(--main-bg-color));
     border-image-slice: 1;
 }

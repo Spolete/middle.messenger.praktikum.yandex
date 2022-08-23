@@ -15,9 +15,9 @@
 
 .error_link {
     margin-top: 69px;
-    color: rgb(51, 144, 236);
+    color: var(--main-color);
 }
 
 .error_link:hover {
-    color: black;
+    color: var(--main-normal-color);
 }
