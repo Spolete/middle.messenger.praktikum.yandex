@@ -1,7 +1,7 @@
 .button {
     width: 100%;
     height: 56px;
-    color: rgb(51, 144, 236);
+    color: var(--main-color);
     background-color: rgb(255, 255, 255);
     border-radius: 12px;
     cursor: pointer;
@@ -9,5 +9,5 @@
 }
 
 .button:hover {
-    background-color: rgb(241, 247, 252);
+    background-color: var(--main-bg-color);
 }

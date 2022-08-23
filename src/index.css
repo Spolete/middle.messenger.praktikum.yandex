@@ -29,6 +29,14 @@ dd {
     margin: 0;
 }
 
+:root {
+    --main-color: rgb(51, 144, 236);
+    --main-bg-color: rgb(241, 247, 252);
+    --main-error-color: red;
+    --main-normal-color: black;
+    --main-latent-color: #9b9b9b;
+}
+
 .form {
     display: flex;
     flex-direction: column;
@@ -59,11 +67,11 @@ dd {
 
 .link {
     font-size: 14px;
-    color: black;
+    color: var(--main-normal-color);
 }
 
 .link:hover {
-    color: rgb(51, 144, 236);
+    color: var(--main-color);
 }
 
 #menu {

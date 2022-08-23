@@ -1,14 +1,9 @@
-.row_change {
+.row-input {
     padding: 0;
 }
 
-.row__input {
+.row-input__input {
     height: 50px;
-    outline: none;
     text-align: right;
     width: 100%;
-}
-
-.row__input:hover {
-    cursor: pointer;
 }

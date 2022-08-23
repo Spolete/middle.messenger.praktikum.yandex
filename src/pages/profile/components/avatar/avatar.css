@@ -20,7 +20,7 @@
 }
 
 .avatar__logo_change:hover path {
-    fill: rgb(51, 144, 236);
+    fill: var(--main-color);
 }
 
 .avatar__name {

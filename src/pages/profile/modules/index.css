@@ -20,6 +20,6 @@
 }
 
 .back {
-    color: rgb(51, 144, 236);
+    color: var(--main-color);
     margin-right: auto;
 }
