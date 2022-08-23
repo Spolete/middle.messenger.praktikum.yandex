@@ -1,0 +1,12 @@
+@import './error/error.css';
+@import './profile/index.css';
+@import './chat/chat.css';
+
+.container__button {
+    width: 100%;
+    margin: 20px 0;
+}
+
+.container__input {
+    width: 100%;
+}

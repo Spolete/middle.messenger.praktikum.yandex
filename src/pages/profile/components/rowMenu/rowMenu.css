@@ -1,0 +1,11 @@
+.row-profile__link_normal {
+    color: var(--main-color);
+}
+
+.row-profile__link_exit {
+    color: var(--main-error-color);
+}
+
+.row-profile__link:hover {
+    color: var(--main-normal-color);
+}

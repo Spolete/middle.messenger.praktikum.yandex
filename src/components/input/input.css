@@ -1,0 +1,79 @@
+.input {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px 0 0;
+    width: 100%;
+}
+
+.input__field {
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--main-latent-color);
+    outline: 0;
+    font-size: 16px;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.input__field::placeholder {
+    color: transparent;
+}
+
+.input__field:placeholder-shown ~ .input__label {
+    font-size: 16px;
+    cursor: text;
+    top: 22px;
+}
+
+.input__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 12px;
+    color: var(--main-latent-color);
+}
+
+.input__field:focus {
+    padding-bottom: 6px;
+    border-width: 3px;
+    border-image: linear-gradient(to right, var(--main-color), var(--main-bg-color));
+    border-image-slice: 1;
+}
+
+.input__field:focus ~ .input__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 12px;
+    color: var(--main-color);
+    font-weight: 700;
+}
+
+.input__field:required, .input__field:invalid {
+    box-shadow: none;
+}
+
+.input__error {
+    color: var(--main-error-color);
+    text-align: left;
+    font-size: 12px;
+    margin-top: 3px;
+    position: absolute;
+    display: none;
+}
+
+input:invalid:not(:placeholder-shown) {
+    border-color: var(--main-error-color);
+}
+
+input:invalid:not(:placeholder-shown) + .input__error {
+    display: block;
+}
+
+input:valid:not(:placeholder-shown) {
+    border-image: linear-gradient(to right, var(--main-color), var(--main-bg-color));
+    border-image-slice: 1;
+}
