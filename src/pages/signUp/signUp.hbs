@@ -1,30 +1,28 @@
-<div class="main">
-    <div class="form">
-        <h1 class="form__title">Создание аккаунта</h1>
-        <div class="container__input">
-            {{> input type="email" error="Это поле должно содержать email в формате example@site.com" placeholder="Почта" name="email" id='email' }}
-        </div>
-        <div class="container__input">
-            {{> input type="text" placeholder="Логин" name="login" id='login' }}
-        </div>
-        <div class="container__input">
-            {{> input type="text" placeholder="Имя" name="name" id='name' }}
-        </div>
-        <div class="container__input">
-            {{> input type="text" placeholder="Фамилия" name="surname" id='surname' }}
-        </div>
-        <div class="container__input">
-            {{> input type="tel" placeholder="Телефон" name="tel" id='tel' }}
-        </div>
-        <div class="container__input">
-            {{> input type="password" placeholder="Пароль" name="password" id='password' }}
-        </div>
-        <div class="container__input">
-            {{> input type="password" placeholder="Повторите пароль" name="password2" id='password2' }}
-        </div>
-        <div class="container__button">
-            {{> button text="Продолжить" }}
-        </div>
-        <a href="/signIn" class="link">Есть аккаунт?</a>
+<div class="{{stylesGlobal.form}}">
+    <h1 class="{{stylesGlobal.form__title}}">Создание аккаунта</h1>
+    <div class="{{styles.container-input}}">
+        {{{ inputEmail }}}
     </div>
+    <div class="{{styles.container-input}}">
+        {{{ inputLogin }}}
+    </div>
+    <div class="{{styles.container-input}}">
+        {{{ inputName }}}
+    </div>
+    <div class="{{styles.container-input}}">
+        {{{ inputSurname }}}
+    </div>
+    <div class="{{styles.container-input}}">
+        {{{ inputTel }}}
+    </div>
+    <div class="{{styles.container-input}}">
+        {{{ inputPassword }}}
+    </div>
+    <div class="{{styles.container-input}}">
+        {{{ inputPassword2 }}}
+    </div>
+    <div class="{{styles.container-button}}">
+        {{{ button }}}
+    </div>
+    <a href="/signIn" class="{{stylesGlobal.link}}">Есть аккаунт?</a>
 </div>

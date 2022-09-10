@@ -1,0 +1,28 @@
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: var(--chat-bg-color);
+  background-image: url("./modules/chat/background-svg/pattern-27.svg");
+}
+
+.left {
+  width: 30%;
+  min-width: 370px;
+  height: 100%;
+  border-right: 1px solid var(--input-search-border-color);
+}

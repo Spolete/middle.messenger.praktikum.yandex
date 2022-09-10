@@ -1,0 +1,9 @@
+.row-input {
+  padding: 0;
+}
+
+.input {
+  height: 50px;
+  text-align: right;
+  width: 100%;
+}

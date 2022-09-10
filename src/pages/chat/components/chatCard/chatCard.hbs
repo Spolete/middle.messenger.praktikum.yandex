@@ -1,0 +1,15 @@
+<div class="{{ styles.avatar }}">
+    <img class="{{ styles.avatar-img }}" src="{{avatar}}" alt="{{name}}">
+</div>
+<div class="{{ styles.caption }}">
+    <div class="{{ styles.title }}">
+        <span class="{{ styles.name }}">{{name}}</span>
+        <span class="{{ styles.date }}">{{date}}</span>
+    </div>
+    <div class="{{ styles.subtitle }}">
+        <div class="{{ styles.subtitle-text }}">{{text}}</div>
+        {{#if unreadCount}}
+            <div class="{{styles.count}}">{{unreadCount}}</div>
+        {{/if}}
+    </div>
+</div>

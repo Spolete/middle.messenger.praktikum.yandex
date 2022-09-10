@@ -1,19 +1,18 @@
-<div class="main">
-    <div class="profile">
-        <a href="/chats" class="back">Назад</a>
-        {{> avatar name='Иван' }}
-        <div class="profile__info">
-            {{> row title='Почта' data='pochta@yandex.ru' }}
-            {{> row title='Логин' data='ivanivanov' }}
-            {{> row title='Имя' data='Иван' }}
-            {{> row title='Фамилия' data='Иванов' }}
-            {{> row title='Имя в чате' data='Иван' }}
-            {{> row title='Телефон' data='+7 (909) 967 30 30' }}
-        </div>
-        <div class="profile__menu">
-            {{> rowMenu href='profileChangeInfo' color='normal' title='Изменить данные' }}
-            {{> rowMenu href='profileChangePassword' color='normal' title='Изменить пароль' }}
-            {{> rowMenu href='sinIn' color='exit' title='Выход' }}
-        </div>
+<div class="{{styles.profile}}">
+    <a href="/chats" class="{{styles.back}}">Назад</a>
+    {{{ avatar }}}
+    <div class="{{styles.profile__info}}">
+        {{{ rowEmail }}}
+        {{{ rowLogin }}}
+        {{{ rowName }}}
+        {{{ rowSurname }}}
+        {{{ rowNameChat }}}
+        {{{ rowTel}}}
+    </div>
+    <div class="{{styles.profile-menu}}">
+        {{{ rowMenuInfo }}}
+        {{{ rowMenuPassword }}}
+        {{{ rowMenuExit }}}
     </div>
 </div>
+
