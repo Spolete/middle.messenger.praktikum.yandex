@@ -1,13 +1,11 @@
-import template from './rowChange.hbs';
-import Block from '../../../../utils/Block';
-import {HTMLInputTypeAttribute} from '../../../../typings/types';
-import rowStyles from '../index.module.css';
-import styles from './rowChange.module.css';
-import {Input} from "../../../../components/input";
-import validInput from "../../../../utils/validateInput";
+import Block from "../../utils/Block";
+import styles from "./input.module.css";
+import template from "./input.hbs";
+import {HTMLInputTypeAttribute} from '../../typings/types'
+import {Input} from "../input";
+import validInput from "../../utils/validateInput";
 
-interface RowChangeProps {
-    title: string,
+interface InputContainerProps {
     type: HTMLInputTypeAttribute,
     placeholder: string,
     name: string,
@@ -18,11 +16,10 @@ interface RowChangeProps {
 }
 
 
-export class RowChange extends Block<RowChangeProps> {
-    constructor(props: RowChangeProps) {
+export class InputContainer extends Block<InputContainerProps> {
+    constructor(props: InputContainerProps) {
         super('div', props);
-        this.element?.classList.add(rowStyles['row-profile'])
-        this.element?.classList.add(styles['row-input'])
+        this.element?.classList.add(styles.input)
     }
 
     init() {
@@ -37,7 +34,7 @@ export class RowChange extends Block<RowChangeProps> {
                 },
             }
         })
-        this.children.input.element.classList.add(styles.input)
+        this.children.input.element?.classList.add(styles['input-field']);
     }
 
     validateInput(name: string, value: string) {
@@ -53,13 +50,11 @@ export class RowChange extends Block<RowChangeProps> {
 
     render() {
         return this.compile(template, {
-            title: this.props.title,
             placeholder: this.props.placeholder,
             name: this.props.name,
             error: this.props.error,
             isValid: this.props.isValid,
-            styles,
-            rowStyles
+            styles
         })
     }
 }
