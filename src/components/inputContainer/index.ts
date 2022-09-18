@@ -38,22 +38,28 @@ export class InputContainer extends Block<InputContainerProps> {
     }
 
     validateInput(name: string, value: string) {
-        this.props.value = value;
+        this.setProps({
+            ...this.props,
+            value
+        });
         if (validInput(name, value)) {
-            this.props.isValid = true;
+            this.setProps({
+                ...this.props,
+                isValid: true
+            });
             this.element?.classList.remove(styles['input-error-display'])
         } else {
-            this.props.isValid = false;
+            this.setProps({
+                ...this.props,
+                isValid: false
+            });
             this.element?.classList.add(styles['input-error-display'])
         }
     }
 
     render() {
         return this.compile(template, {
-            placeholder: this.props.placeholder,
-            name: this.props.name,
-            error: this.props.error,
-            isValid: this.props.isValid,
+            ...this.props,
             styles
         })
     }

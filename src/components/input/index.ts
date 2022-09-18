@@ -1,5 +1,4 @@
 import Block from "../../utils/Block";
-import styles from "../inputContainer/input.module.css";
 import template from "./input.hbs";
 import {HTMLInputTypeAttribute} from '../../typings/types'
 

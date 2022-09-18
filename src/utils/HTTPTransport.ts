@@ -1,12 +1,14 @@
-enum METHOD {
-    GET = 'GET',
-    POST = 'POST',
-    PUT = 'PUT',
-    DELETE = 'DELETE',
+import queryStringify from "./queryStringify";
+
+enum Method {
+    Get = 'GET',
+    Post = 'POST',
+    Put = 'PUT',
+    Delete = 'DELETE',
 }
 
 type Options = {
-    method: METHOD;
+    method: Method;
     data?: any;
     headers?: Record<string, string>;
     timeout?: number;
@@ -14,26 +16,22 @@ type Options = {
 
 type OptionsWithoutMethod = Omit<Options, 'method'>;
 
-function queryStringify(data: string): string {
-    return `?${Object.entries(data).map(pair => pair.join('=')).join('&')}`
-}
-
 class HTTPTransport {
     get = (url: string, options: OptionsWithoutMethod = {}): Promise<XMLHttpRequest> => {
         const newUrl = url + '' + queryStringify(options.data)
-        return this.request(newUrl, {...options, method: METHOD.GET}, options.timeout);
+        return this.request(newUrl, {...options, method: Method.Get}, options.timeout);
     };
 
     put = (url: string, options: OptionsWithoutMethod = {}): Promise<XMLHttpRequest> => {
-        return this.request(url, {...options, method: METHOD.PUT}, options.timeout);
+        return this.request(url, {...options, method: Method.Put}, options.timeout);
     };
 
     POST = (url: string, options: OptionsWithoutMethod = {}): Promise<XMLHttpRequest> => {
-        return this.request(url, {...options, method: METHOD.POST}, options.timeout);
+        return this.request(url, {...options, method: Method.Post}, options.timeout);
     };
 
     DELETE = (url: string, options: OptionsWithoutMethod = {}): Promise<XMLHttpRequest> => {
-        return this.request(url, {...options, method: METHOD.DELETE}, options.timeout);
+        return this.request(url, {...options, method: Method.Delete}, options.timeout);
     };
 
     request = (url: string, options: Options, timeout = 5000): Promise<XMLHttpRequest> => {
@@ -55,7 +53,7 @@ class HTTPTransport {
             xhr.onerror = reject;
             xhr.ontimeout = reject;
 
-            if (method === METHOD.GET || !data) {
+            if (method === Method.Get || !data) {
                 xhr.send();
             } else {
                 xhr.send(data)
