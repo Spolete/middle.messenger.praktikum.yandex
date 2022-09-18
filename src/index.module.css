@@ -1,0 +1,87 @@
+*,
+*::before,
+*::after {
+  border: none;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+:root {
+  --main-color: rgb(51 144 236);
+  --main-bg-color: rgb(241 247 252);
+  --chat-bg-color: #e6ebee;
+  --chat-bg-color-secondary: #d2d2d2;
+  --main-error-color: red;
+  --main-normal-color: black;
+  --main-latent-color: #9b9b9b;
+  --primary-text-color: #000;
+  --secondary-text-color: #707579;
+  --message-my-background-color: #eeffde;
+  --message-background-color: #fff;
+  --input-search-border-color: #dfe1e5;
+  --light-secondary-text-color: hsl(207deg 4% 46% / 8%);
+  --chatlist-status-color: #0ac630;
+  --badge-text-color: #fff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  padding: 30px 40px;
+  box-shadow: 0 1px 4px 1px rgb(36 36 36 / 7%);
+  border-radius: 12px;
+}
+
+.form-title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  top: 0;
+  left: 0;
+}
+
+.link {
+  font-size: 14px;
+  color: var(--main-normal-color);
+}
+
+.link:hover {
+  color: var(--main-color);
+}
+
+#menu {
+  z-index: 1000;
+  position: sticky;
+}

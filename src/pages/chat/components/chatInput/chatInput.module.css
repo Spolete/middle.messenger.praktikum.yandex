@@ -1,0 +1,64 @@
+.chat-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  bottom: 0;
+  padding: 5px 0 15px;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.message {
+  align-items: center;
+  display: flex;
+  flex: 1;
+}
+
+.input-attach {
+  display: none;
+}
+
+.icon-container {
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+}
+
+.icon-container:hover {
+  background-color: var(--light-secondary-text-color);
+}
+
+.message-svg {
+  width: 25px;
+  height: 25px;
+}
+
+.message-text {
+  padding: 0 20px;
+  margin: 5px 10px 0 5px;
+  flex: 1;
+  height: 44px;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 4px 1px #24242412;
+  outline: none;
+}
+
+.send-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 8px;
+  background: var(--main-color);
+  box-shadow: 0 1px 4px 1px #24242412;
+}
+
+.send-icon {
+  fill: var(--main-color);
+  width: 25px;
+  height: 25px;
+}

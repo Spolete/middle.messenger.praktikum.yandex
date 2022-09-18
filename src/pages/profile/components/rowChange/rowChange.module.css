@@ -1,0 +1,25 @@
+.row-input {
+  padding: 0;
+  position: relative;
+}
+
+.input {
+  height: 50px;
+  text-align: right;
+  width: 100%;
+  outline: none;
+}
+
+.input-error {
+  color: var(--main-error-color);
+  text-align: left;
+  font-size: 12px;
+  margin-top: 3px;
+  position: absolute;
+  display: none;
+  bottom: 0;
+}
+
+.input-error-display .input-error {
+  display: block;
+}

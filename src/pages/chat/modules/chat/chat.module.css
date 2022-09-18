@@ -1,0 +1,12 @@
+.chat {
+  height: 100%;
+  width: 100%;
+}
+
+.background {
+  width: 500px;
+  fill: var(--chat-bg-color-secondary);
+  background-repeat: repeat;
+  position: fixed;
+  top: 0;
+}

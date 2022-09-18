@@ -1,0 +1,11 @@
+.normal {
+  color: var(--main-color);
+}
+
+.exit {
+  color: var(--main-error-color);
+}
+
+.link:hover {
+  color: var(--main-normal-color);
+}

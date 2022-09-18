@@ -1,17 +1,15 @@
-<div class="main">
-    <div class="form">
-        <h1 class="form__title">Вход</h1>
-        <div class="container__input">
-            {{> input type="input" placeholder="Логин" name="login" id='login' }}
-        </div>
-        <div class="container__input">
-            {{> input type="password" placeholder="Пароль" name="password" id='password' }}
-        </div>
-        <div class="container__button">
-            {{> button text="Войти" }}
-        </div>
-        <a href="/signUp" class="link">Создать аккаунт</a>
+<div class="{{stylesGlobal.form}}">
+    <h1 class="{{stylesGlobal.form-title}}">Вход</h1>
+    <div class="{{styles.container-input}}">
+        {{{ inputLogin }}}
     </div>
+    <div class="{{styles.container-input}}">
+        {{{ inputPassword }}}
+    </div>
+    <div class="{{styles.container-button}}">
+        {{{ button }}}
+    </div>
+    <a href="/signUp" class="{{stylesGlobal.link}}">Создать аккаунт</a>
 </div>
 
 

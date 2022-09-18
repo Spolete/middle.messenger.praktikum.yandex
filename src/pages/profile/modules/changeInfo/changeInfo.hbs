@@ -1,17 +1,16 @@
-<div class="main">
-    <div class="profile">
-        <a href="/profile" class="back">Назад</a>
-        {{> avatar name='Иван' changeClass="avatar__logo_change" }}
-        <div class="profile__info">
-            {{> rowChange type="email" title='Почта' data='pochta@yandex.ru' }}
-            {{> rowChange type="text" title='Логин' data='ivanivanov' }}
-            {{> rowChange type="text" title='Имя' data='Иван' }}
-            {{> rowChange type="text" title='Фамилия' data='Иванов' }}
-            {{> rowChange type="text" title='Имя в чате' data='Иван' }}
-            {{> rowChange type="tel" title='Телефон' data='+7 (909) 967 30 30' }}
-        </div>
-        <div class="profile__menu">
-            <a href="/profile">{{> button text='Сохранить'}}</a>
-        </div>
+<div class="{{styles.profile}}">
+    <a href="/profile" class="{{styles.back}}">Назад</a>
+    {{{ avatar }}}
+    <div class="{{styles.profile-info}}">
+        {{{ rowChangeEmail }}}
+        {{{ rowChangeLogin }}}
+        {{{ rowChangeName }}}
+        {{{ rowChangeSurname }}}
+        {{{ rowChangeNameChat }}}
+        {{{ rowChangeTel }}}
+    </div>
+    <div class="{{styles.profile-menu}}">
+        <a>{{{ button }}}</a>
     </div>
 </div>
+
