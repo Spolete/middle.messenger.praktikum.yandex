@@ -1,3 +1,9 @@
-{{{chatHeader}}}
-{{{messages}}}
-{{{chatInput}}}
+{{#if selectedChat}}
+    {{{chatHeader}}}
+    {{{messages}}}
+    {{{chatInput}}}
+{{else}}
+    <div class="{{styles.choose-chat}}">
+        <div class="{{styles.choose-chat-message}}">Выберите чат</div>
+    </div>
+{{/if}}

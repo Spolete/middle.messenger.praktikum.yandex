@@ -1,7 +1,14 @@
-<div class="{{ styles.avatar }}">
-    <img class="{{ styles.avatar-img }}" src="{{avatar}}" alt="{{name}}">
-</div>
-<div class="{{ styles.caption }}">
+{{#if avatar}}
+    <div class="{{ styles.avatar }}">
+        <img class="{{ styles.avatar-img }}" src="{{avatar}}" alt="{{name}}">
+    </div>
+{{else}}
+    <div class="{{ styles.avatar }}">
+        <div class="{{ styles.avatar-img-none }}"></div>
+    </div>
+{{/if}}
+
+<div class="{{ styles.caption }}" >
     <div class="{{ styles.title }}">
         <span class="{{ styles.name }}">{{name}}</span>
         <span class="{{ styles.date }}">{{date}}</span>

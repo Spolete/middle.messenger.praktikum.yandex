@@ -28,6 +28,7 @@ dd {
 
 :root {
   --main-color: rgb(51 144 236);
+  --main-color-seconadry: #82b4e3;
   --main-bg-color: rgb(241 247 252);
   --chat-bg-color: #e6ebee;
   --chat-bg-color-secondary: #d2d2d2;
@@ -70,15 +71,6 @@ dd {
   overflow: auto;
   top: 0;
   left: 0;
-}
-
-.link {
-  font-size: 14px;
-  color: var(--main-normal-color);
-}
-
-.link:hover {
-  color: var(--main-color);
 }
 
 #menu {

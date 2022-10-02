@@ -1,5 +1,5 @@
 import template from './error.hbs';
-import Block from '../../utils/Block';
+import Block from '../../utils/chore/Block';
 import globalStyles from '../../index.module.css'
 import styles from './error.module.css'
 

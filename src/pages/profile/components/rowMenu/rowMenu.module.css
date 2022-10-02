@@ -6,6 +6,10 @@
   color: var(--main-error-color);
 }
 
+.link {
+  font-size: 16px;
+}
+
 .link:hover {
   color: var(--main-normal-color);
 }

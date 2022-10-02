@@ -1,9 +1,12 @@
-import Block from '../../utils/Block';
+import Block from '../../utils/chore/Block';
 import template from './signIn.hbs';
 import {Button} from "../../components/button";
+import {Link} from "../../components/link";
 import styles from '../index.module.css';
 import stylesGlobal from '../../index.module.css';
 import {InputContainer} from "../../components/inputContainer";
+import AuthController from "../../controllers/AuthController";
+import {SignupData} from "../../api/AuthAPI";
 
 
 interface SignInProps {
@@ -44,23 +47,33 @@ export class SignIn extends Block<SignInProps> {
             value: '',
             isValid: true,
         });
+
+        this.children.link = new Link({
+            label: 'Создать аккаунт',
+            to: '/register'
+        });
+
+        this.children.link.getContent().classList.add(styles.link)
     }
 
     submit() {
         let isValid = true;
-        const submitData: Record<string, string> = {}
 
-        Object.keys(this.children).forEach(key => {
-            if (this.children[key] instanceof InputContainer) {
-                submitData[this.children[key].props.id] = this.children[key].props.value;
-                if (!this.children[key].props.isValid) {
+        const values = Object
+            .values(this.children)
+            .filter(child => child instanceof InputContainer && child.props.name !== 'password2')
+            .map(child => {
+                if (!child.props.isValid) {
                     isValid = false;
                 }
-            }
-        });
+                return [child.props.name, child.props.value]
+            })
 
-        console.log('isValid: ', isValid);
-        console.log('submitData: ', submitData);
+        const data = Object.fromEntries(values);
+
+        if (isValid) {
+            AuthController.signin(data as SignupData);
+        }
     }
 
     render() {
