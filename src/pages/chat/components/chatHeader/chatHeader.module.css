@@ -35,6 +35,16 @@
   border-radius: 50%;
 }
 
+.avatar-img-none {
+  position: relative;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, var(--main-color), var(--main-bg-color));
+}
+
 .title {
   display: flex;
   margin-bottom: 5px;
@@ -60,7 +70,20 @@
   background-color: var(--light-secondary-text-color);
 }
 
+.chat-utils {
+  width: 60%;
+  display: flex;
+}
+
 .chat-util {
   width: 25px;
   height: 25px;
+}
+
+.sidebar-search {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--input-search-border-color);
+  border-radius: 22px;
+  padding: 0 20px;
 }

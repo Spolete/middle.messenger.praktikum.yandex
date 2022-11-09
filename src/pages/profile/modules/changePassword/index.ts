@@ -1,10 +1,11 @@
 import template from './changePassword.hbs';
-import Block from '../../../../utils/Block';
+import Block from '../../../../utils/chore/Block';
 import globalStyles from '../../../../index.module.css';
 import styles from '../index.module.css';
 import {Avatar} from "../../components/avatar";
 import {RowChange} from "../../components/rowChange";
 import {Button} from "../../../../components/button";
+import UserController from "../../../../controllers/UserController";
 
 interface ProfileChangePasswordProps {
 }
@@ -16,7 +17,7 @@ export class ProfileChangePassword extends Block<ProfileChangePasswordProps> {
     }
 
     init() {
-        this.children.avatar = new Avatar({name: 'Иван', change: true});
+        this.children.avatar = new Avatar({ change: true});
         this.children.rowChangePrev = new RowChange({
             type: 'password',
             title: 'Старый пароль',
@@ -25,7 +26,7 @@ export class ProfileChangePassword extends Block<ProfileChangePasswordProps> {
             name: 'password',
             error: 'От 8 до 40 символов, одна заглавная буква и цифра',
             value: '',
-            isValid: true
+            isValid: false
         });
         this.children.rowChangeNew = new RowChange({
             type: 'password',
@@ -35,7 +36,7 @@ export class ProfileChangePassword extends Block<ProfileChangePasswordProps> {
             name: 'password',
             error: 'От 8 до 40 символов, одна заглавная буква и цифра',
             value: '',
-            isValid: true
+            isValid: false
         });
         this.children.rowChangeNewSecond = new RowChange({
             type: 'password',
@@ -45,7 +46,7 @@ export class ProfileChangePassword extends Block<ProfileChangePasswordProps> {
             name: 'password',
             error: 'От 8 до 40 символов, одна заглавная буква и цифра',
             value: '',
-            isValid: true,
+            isValid: false,
         });
         this.children.button = new Button({
             text: 'Сохранить',
@@ -70,8 +71,12 @@ export class ProfileChangePassword extends Block<ProfileChangePasswordProps> {
             }
         });
 
-        console.log('isValid: ', isValid);
-        console.log('submitData: ', submitData);
+        if (isValid) {
+            UserController.password({
+                oldPassword: this.children.rowChangePrev.props.value,
+                newPassword: this.children.rowChangeNew.props.value,
+            })
+        }
     }
 
     render() {

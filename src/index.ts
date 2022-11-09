@@ -1,41 +1,47 @@
-import { Menu } from './components/menu';
-import { SignIn } from './pages/signIn';
-import { SignUp } from './pages/signUp';
-import { ErrorPage } from './pages/error';
-import { Profile } from './pages/profile/modules/main';
-import { ProfileChangeInfo } from './pages/profile/modules/changeInfo';
-import { ProfileChangePassword } from './pages/profile/modules/changePassword';
-import { ChatPage } from './pages/chat';
+import {SignIn} from './pages/signIn';
+import {SignUp} from './pages/signUp';
+import {ErrorPage} from './pages/error';
+import {ProfilePage} from './pages/profile/modules/main';
+import {ProfileChangeInfo} from './pages/profile/modules/changeInfo';
+import {ProfileChangePassword} from './pages/profile/modules/changePassword';
+import {ChatPage} from './pages/chat';
+import Router from "./utils/chore/Router";
+import AuthController from "./controllers/AuthController";
 
-window.addEventListener('DOMContentLoaded', () => {
-  const app = document.querySelector('#app');
-  const menu = document.querySelector('#menu');
-  const menuLink = new Menu();
-        menu!.append(menuLink.getContent());
+enum Routes {
+    Index = '/',
+    ClientError = '/404',
+    ServerError = '/500',
+    Register = '/register',
+    Profile = '/profile',
+    ProfileChangeInfo = '/profileChangeInfo',
+    ProfileChangePassword = '/profileChangePassword',
+    Chat = '/chat'
+}
 
-        if (window.location.pathname === '/signIn') {
-          const signIn = new SignIn({});
-            app!.append(signIn.getContent());
-        } else if (window.location.pathname === '/signUp') {
-          const signUp = new SignUp({});
-            app!.append(signUp.getContent());
-        } else if (window.location.pathname === '/404') {
-          const error = new ErrorPage({ errorCode: 404, errorText: 'Не туда попали' });
-            app!.append(error.getContent());
-        } else if (window.location.pathname === '/500') {
-          const error = new ErrorPage({ errorCode: 500, errorText: 'Мы уже чиним' });
-            app!.append(error.getContent());
-        } else if (window.location.pathname === '/profile') {
-          const profile = new Profile({});
-            app!.append(profile.getContent());
-        } else if (window.location.pathname === '/profileChangeInfo') {
-          const profileChangeInfo = new ProfileChangeInfo();
-            app!.append(profileChangeInfo.getContent());
-        } else if (window.location.pathname === '/profileChangePassword') {
-          const profileChangePassword = new ProfileChangePassword();
-            app!.append(profileChangePassword.getContent());
-        } else {
-          const chatPage = new ChatPage();
-            app!.append(chatPage.getContent());
+window.addEventListener('DOMContentLoaded', async () => {
+    Router
+        .use(Routes.Index, SignIn)
+        .use(Routes.ClientError, ErrorPage)
+        .use(Routes.ServerError, ErrorPage)
+        .use(Routes.Register, SignUp)
+        .use(Routes.Profile, ProfilePage)
+        .use(Routes.ProfileChangeInfo, ProfileChangeInfo)
+        .use(Routes.ProfileChangePassword, ProfileChangePassword)
+        .use(Routes.Chat, ChatPage)
+
+    try {
+        await AuthController.fetchUser();
+        Router.start();
+        if (window.location.pathname === Routes.Index || window.location.pathname === Routes.Register) {
+            Router.go(Routes.Profile);
         }
+    } catch (e) {
+        Router.start();
+        if (window.location.pathname !== Routes.Register && window.location.pathname !== Routes.ClientError
+            && window.location.pathname !== Routes.ServerError) {
+            Router.go(Routes.Index);
+        }
+    }
+
 });

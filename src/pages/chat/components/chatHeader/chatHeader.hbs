@@ -1,7 +1,13 @@
 <div class="{{styles.chat-info}}">
-    <div class="{{ styles.avatar }}">
-        <img class="{{ styles.avatar-img }}" src="{{avatar}}" alt="{{name}}">
-    </div>
+    {{#if avatar}}
+        <div class="{{ styles.avatar }}">
+            <img class="{{ styles.avatar-img }}" src="{{avatar}}">
+        </div>
+    {{else}}
+        <div class="{{ styles.avatar }}">
+            <div class="{{ styles.avatar-img-none }}"></div>
+        </div>
+    {{/if}}
     <div class="{{ styles.caption }}">
         <div class="{{ styles.title }}">
             {{name}}
@@ -12,12 +18,7 @@
     </div>
 </div>
 <div class="{{styles.chat-utils}}">
-    <button class="{{styles.menu}}">
-        <svg class="{{styles.chat-util}}" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" version="1.1" fill="none"
-             stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
-            <circle cx="8" cy="2.5" r=".75"/>
-            <circle cx="8" cy="8" r=".75"/>
-            <circle cx="8" cy="13.5" r=".75"/>
-        </svg>
-    </button>
+    {{{ input }}}
+    {{{ buttonAdd }}}
+    {{{ buttonDelete }}}
 </div>

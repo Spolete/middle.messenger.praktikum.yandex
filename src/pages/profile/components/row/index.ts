@@ -1,5 +1,5 @@
 import template from './row.hbs';
-import Block from '../../../../utils/Block';
+import Block from '../../../../utils/chore/Block';
 import rowStyles from '../index.module.css';
 
 interface RowProps {

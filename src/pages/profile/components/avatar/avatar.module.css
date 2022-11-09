@@ -16,6 +16,7 @@
 }
 
 .avatar-logo-change:hover {
+  cursor: pointer;
   background-color: rgb(84 84 84);
 }
 
@@ -27,4 +28,8 @@
   font-size: 22px;
   font-weight: bold;
   margin-top: 25px;
+}
+
+.input-attach {
+  display: none;
 }

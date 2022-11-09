@@ -1,5 +1,5 @@
 import template from './rowChange.hbs';
-import Block from '../../../../utils/Block';
+import Block from '../../../../utils/chore/Block';
 import {HTMLInputTypeAttribute} from '../../../../typings/types';
 import rowStyles from '../index.module.css';
 import styles from './rowChange.module.css';

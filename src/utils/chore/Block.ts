@@ -20,7 +20,6 @@ export default class Block<Props extends Record<string, any> = any> {
 
     private readonly _meta: { tagName: string, props: any };
 
-    // eslint-disable-next-line no-use-before-define
     protected children: Record<string, Block | any[]>;
 
     constructor(tagName = 'div', propsWithChildren?: Props) {
@@ -45,7 +44,7 @@ export default class Block<Props extends Record<string, any> = any> {
         const children: Record<string, Block | any[]> = {};
 
         Object.entries(childrenAndProps).forEach(([key, value]) => {
-            if (Array.isArray(value) && value.every(v => v instanceof Block)) {
+            if (Array.isArray(value) && value.length > 0 && value.every(v => v instanceof Block)) {
                 children[key] = value;
             } else if (value instanceof Block) {
                 children[key as string] = value;
@@ -97,7 +96,7 @@ export default class Block<Props extends Record<string, any> = any> {
         Object.entries(this.children).forEach(([name, component]) => {
             if (Array.isArray(component)) {
                 const components: string[] = [];
-                component.forEach((element) => components.push(`<div data-id="${element.id}"></div>`));
+                component.forEach((element) => components.push(`<div data-id="${element?.id}"></div>`));
                 contextAndStubs[name] = components;
             } else {
                 contextAndStubs[name] = `<div data-id="${component.id}"></div>`;
@@ -112,11 +111,11 @@ export default class Block<Props extends Record<string, any> = any> {
         Object.entries(this.children).forEach(([_, component]) => {
             if (Array.isArray(component)) {
                 component.forEach((element) => {
-                    const stub = temp.content.querySelector(`[data-id="${element.id}"]`);
+                    const stub = temp.content.querySelector(`[data-id="${element?.id}"]`);
                     if (!stub) {
                         return;
                     }
-                    stub.replaceWith(element.getContent());
+                    stub.replaceWith(element?.getContent());
                 });
             } else {
                 const stub = temp.content.querySelector(`[data-id="${component.id}"]`);

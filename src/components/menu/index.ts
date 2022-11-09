@@ -1,6 +1,6 @@
 import template from './menu.hbs';
 import styles from "./menu.module.css";
-import Block from "../../utils/Block";
+import Block from "../../utils/chore/Block";
 
 interface MenuProps {}
 

@@ -1,0 +1,8 @@
+.link {
+  color: var(--main-normal-color);
+}
+
+.link:hover {
+  cursor: pointer;
+  color: var(--main-color);
+}

@@ -28,6 +28,9 @@ export default function validateInput(type: string, data: string): boolean {
             pattern = /^[+a-zA-Z][a-zA-Z0-9-_]{3,20}$/;
             break;
 
+        case 'display_name':
+            return true
+
         default:
             return false
     }
