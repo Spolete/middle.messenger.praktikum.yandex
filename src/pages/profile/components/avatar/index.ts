@@ -32,10 +32,7 @@ export class Avatar extends Block<AvatarProps> {
                 id: 'file-input',
                 events: {
                     change: (event: Event): void => {
-                        // const formData = new FormData(this.getContent())
-                        // UserController.avatar(event.target.files[0])
-                        // formData.append('data', event.target.files[0])
-                        console.log(event.target.files[0])
+                        event.preventDefault()
                     },
                 }
             })

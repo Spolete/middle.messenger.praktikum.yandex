@@ -4,7 +4,7 @@ import {Button} from "../../components/button";
 import {Link} from "../../components/link";
 import styles from '../index.module.css';
 import stylesGlobal from '../../index.module.css';
-import {InputContainer} from "../../components/inputContainer";
+import {InputContainer, } from "../../components/inputContainer";
 import AuthController from "../../controllers/AuthController";
 import {SignupData} from "../../api/AuthAPI";
 
@@ -61,8 +61,8 @@ export class SignIn extends Block<SignInProps> {
 
         const values = Object
             .values(this.children)
-            .filter(child => child instanceof InputContainer && child.props.name !== 'password2')
-            .map(child => {
+            .filter((child) => child instanceof InputContainer && child.props.name !== 'password2')
+            .map((child: any) => {
                 if (!child.props.isValid) {
                     isValid = false;
                 }

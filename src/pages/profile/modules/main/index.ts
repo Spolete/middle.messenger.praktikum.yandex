@@ -9,6 +9,14 @@ import {Link} from "../../../../components/link";
 import {withUser} from "../../../../hocs/withStore";
 
 interface ProfileProps {
+    user: {
+        first_name: string,
+        email: string,
+        login: string,
+        second_name: string,
+        display_name: string,
+        phone: string,
+    }
 }
 
 class ProfilePageBase extends Block<ProfileProps> {

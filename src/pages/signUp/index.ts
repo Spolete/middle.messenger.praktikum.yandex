@@ -111,7 +111,7 @@ export class SignUp extends Block<SignInProps> {
         const values = Object
             .values(this.children)
             .filter(child => child instanceof InputContainer && child.props.name !== 'password2')
-            .map(child => {
+            .map((child: any) => {
                 if (!child.props.isValid || child.props.value === '') {
                     isValid = false;
                 }

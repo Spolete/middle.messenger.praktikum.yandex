@@ -9,6 +9,14 @@ import {withUser} from "../../../../hocs/withStore";
 import UserController from "../../../../controllers/UserController";
 
 interface ProfileChangeInfoProps {
+    user: {
+        first_name: string,
+        email: string,
+        login: string,
+        second_name: string,
+        display_name: string,
+        phone: string,
+    }
 }
 
 class ProfileChangeInfoBase extends Block<ProfileChangeInfoProps> {
@@ -98,7 +106,7 @@ class ProfileChangeInfoBase extends Block<ProfileChangeInfoProps> {
         const values = Object
             .values(this.children)
             .filter(child => child instanceof RowChange)
-            .map(child => {
+            .map((child: any) => {
                 if (!child.props.isValid) {
                     isValid = false;
                 }

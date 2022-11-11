@@ -12,7 +12,7 @@ export default class Block<Props extends Record<string, any> = any> {
 
     public id = nanoid(6);
 
-    protected props: Props;
+    props: Props;
 
     private eventBus: () => EventBus;
 
@@ -20,7 +20,7 @@ export default class Block<Props extends Record<string, any> = any> {
 
     private readonly _meta: { tagName: string, props: any };
 
-    protected children: Record<string, Block | any[]>;
+    protected children: Record<string, any>;
 
     constructor(tagName = 'div', propsWithChildren?: Props) {
         const eventBus = new EventBus();
@@ -151,7 +151,7 @@ export default class Block<Props extends Record<string, any> = any> {
         }
     }
 
-    protected componentDidUpdate(oldProps: Props, newProps: Props): boolean {
+    protected componentDidUpdate(_oldProps: Props, _newProps: Props): boolean {
         return true;
     }
 
@@ -177,7 +177,7 @@ export default class Block<Props extends Record<string, any> = any> {
         Object.assign(this.props, nextProps);
     }
 
-    protected get element(): HTMLElement {
+    get element(): HTMLElement {
         return this._element;
     }
 

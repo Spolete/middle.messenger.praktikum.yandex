@@ -17,9 +17,9 @@ interface InputProps {
 export class Input extends Block<InputProps> {
     constructor(props: InputProps) {
         super('input', props);
-        this.element.placeholder = this.props.placeholder;
-        this.element.type = this.props.type;
-        this.element.name = this.props.name;
+        if (this.props.placeholder) (this.element as HTMLInputElement).placeholder = this.props.placeholder;
+        (this.element as HTMLInputElement).type = this.props.type;
+        (this.element as HTMLInputElement).name = this.props.name;
         this.element.id = this.props.id;
 
     }

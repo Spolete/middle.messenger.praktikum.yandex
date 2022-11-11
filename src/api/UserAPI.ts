@@ -9,6 +9,17 @@ export interface User {
     phone: string
 }
 
+export interface SearchUserData {
+    id: number,
+    first_name: string,
+    second_name: string,
+    display_name: string,
+    login: string,
+    email: string,
+    phone: string,
+    avatar: string
+}
+
 export interface PasswordData {
     oldPassword: string,
     newPassword: string
@@ -35,7 +46,7 @@ export class UserAPI extends BaseAPI {
         return this.http.put('/password', {data});
     }
 
-    search(data: SearchData) {
+    search(data: SearchData): Promise<SearchUserData[]> {
         return this.http.post('/search', {data});
     }
 

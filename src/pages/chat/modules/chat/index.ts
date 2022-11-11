@@ -7,6 +7,7 @@ import {ChatInput} from "../../components/chatInput";
 import {withSelectedChat} from "../../../../hocs/withStore";
 
 interface ChatProps {
+    selectedChat: number
 }
 
 export class ChatBase extends Block<ChatProps> {

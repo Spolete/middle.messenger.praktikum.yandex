@@ -16,6 +16,9 @@ export interface Message {
         content_size: number;
         upload_date: string;
     }
+    user: {
+        id: number,
+    },
 }
 
 class MessagesController {
