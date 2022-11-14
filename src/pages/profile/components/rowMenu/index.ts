@@ -22,14 +22,14 @@ export class RowMenu extends Block<RowMenuProps> {
         if (!this.props.exit) {
             this.children.link = new Link({
                 label: this.props.title,
-                to: this.props.to,
+                to: this.props.to
             });
         } else {
             this.children.link = new Button({
                 text: this.props.title,
                 events: {
                     click: () => AuthController.logout()
-                },
+                }
             });
         }
 

@@ -39,7 +39,6 @@ export class Router {
         const route = this._getRoute(pathname);
 
         if (!route) {
-            // this.go('/404')
             return;
         }
 

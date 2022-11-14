@@ -34,7 +34,7 @@ class ChatsController {
     addUserToChat(chatId: number, userId: number) {
         const data = {
             chatId,
-            users: [userId],
+            users: [userId]
         }
         this.api.addUsers(data);
     }
@@ -48,7 +48,7 @@ class ChatsController {
     async deleteUserFromChat(chatId: number, userId: number) {
         const data = {
             chatId,
-            users: [userId],
+            users: [userId]
         }
         await this.api.deleteUserFromChat(data);
     }

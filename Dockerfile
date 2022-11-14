@@ -1,26 +1,14 @@
-FROM --platform=linux/amd64 node:16.15.0 AS builder
+FROM --platform=linux/amd64 node:16.15.0
 
-WORKDIR /var/www/app
+WORKDIR /var/www
 
-COPY package*.json ./
+COPY package*.json .
 
 RUN npm install
 
 COPY . .
 
 RUN npm run build
-
-FROM --platform=linux/amd64 node:16.15.0 AS production
-
-WORKDIR /var/www/app
-
-COPY --from=builder /var/www/app/package*.json ./
-
-RUN npm install --omit=dev
-
-COPY --from=builder /var/www/app/dist ./dist
-
-COPY --from=builder /var/www/app/server.js ./
 
 EXPOSE 3000
 

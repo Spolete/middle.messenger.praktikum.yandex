@@ -34,7 +34,7 @@ export class RowChange extends Block<RowChangeProps> {
             events: {
                 blur: (event: any): void => {
                     this.validateInput(event.target.name, event.target.value)
-                },
+                }
             }
         })
         this.children.input.element.classList.add(styles.input)

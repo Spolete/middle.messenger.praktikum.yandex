@@ -47,7 +47,7 @@ describe('Block', () => {
 
     it('an instance of the block with user details must be created', () => {
         const componentWithCustomProps = new ComponentMock({
-            class: 'custom-class',
+            class: 'custom-class'
         });
         expect(componentWithCustomProps.props.class).to.eq('custom-class');
     });
@@ -66,7 +66,7 @@ describe('Block', () => {
 
     it('updating props', () => {
         component.setProps({
-            class: 'updated-test',
+            class: 'updated-test'
         });
         expect(component.props.class).to.eq('updated-test');
     });
@@ -77,7 +77,7 @@ describe('Block', () => {
 
     it('install new props', () => {
         component.setProps({
-            text: 'Hello',
+            text: 'Hello'
         });
         expect(component.props.text).to.eq('Hello');
     });

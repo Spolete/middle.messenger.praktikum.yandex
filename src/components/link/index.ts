@@ -17,7 +17,7 @@ class BaseLink extends Block<LinkProps> {
             ...props,
             events: {
                 click: () => this.navigate()
-            },
+            }
         });
 
         this.element?.classList.add(styles.link)

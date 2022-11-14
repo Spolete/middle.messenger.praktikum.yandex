@@ -5,12 +5,9 @@ import {Chat} from "./modules/chat";
 import {ChatSidebar} from "./modules/chatSidebar";
 import ChatsController from "../../controllers/ChatsController";
 
-interface ChatPageProps {
-}
-
-export class ChatPage extends Block<ChatPageProps> {
-    constructor(props?: ChatPageProps) {
-        super('div', props)
+export class ChatPage extends Block {
+    constructor() {
+        super('div')
         this.element?.classList.add(styles.root)
     }
 

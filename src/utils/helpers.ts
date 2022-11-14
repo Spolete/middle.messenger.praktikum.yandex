@@ -4,7 +4,7 @@ export type Indexed<T = any> = {
 
 export function merge(lhs: Indexed, rhs: Indexed): Indexed {
     for (const p in rhs) {
-        if (!rhs.hasOwnProperty(p)) {
+        if (!Object.prototype.hasOwnProperty.call(rhs, p)) {
             continue;
         }
 
@@ -32,7 +32,7 @@ export function set(object: Indexed | unknown, path: string, value: unknown): In
     }
 
     const result = path.split('.').reduceRight<Indexed>((acc, key) => ({
-        [key]: acc,
+        [key]: acc
     }), value as any);
 
     return merge(object as Indexed, result);

@@ -8,12 +8,9 @@ import {Link} from "../../components/link";
 import AuthController from "../../controllers/AuthController";
 import {SignupData} from "../../api/AuthAPI";
 
-interface SignInProps {
-}
-
-export class SignUp extends Block<SignInProps> {
-    constructor(props?: SignInProps) {
-        super('div', props)
+export class SignUp extends Block {
+    constructor() {
+        super('div')
         this.element?.classList.add(stylesGlobal.main)
     }
 
@@ -34,7 +31,7 @@ export class SignUp extends Block<SignInProps> {
             id: 'email',
             error: 'Это поле должно содержать email в формате example@site.com',
             value: '',
-            isValid: true,
+            isValid: true
         });
 
         this.children.inputLogin = new InputContainer({
@@ -44,7 +41,7 @@ export class SignUp extends Block<SignInProps> {
             id: 'login',
             error: 'От 3 до 20 символов, латиница, может содержать цифры',
             value: '',
-            isValid: true,
+            isValid: true
         });
 
         this.children.inputName = new InputContainer({
@@ -54,7 +51,7 @@ export class SignUp extends Block<SignInProps> {
             id: 'first_name',
             error: 'Первая буква должна быть заглавной, без пробелов и без цифр',
             value: '',
-            isValid: true,
+            isValid: true
         });
 
         this.children.inputSurname = new InputContainer({
@@ -64,7 +61,7 @@ export class SignUp extends Block<SignInProps> {
             id: 'second_name',
             error: 'Первая буква должна быть заглавной, без пробелов и без цифр',
             value: '',
-            isValid: true,
+            isValid: true
         });
 
         this.children.inputTel = new InputContainer({
@@ -74,7 +71,7 @@ export class SignUp extends Block<SignInProps> {
             id: 'phone',
             error: 'От 10 до 15 символов, состоит из цифр',
             value: '',
-            isValid: true,
+            isValid: true
         });
 
         this.children.inputPassword = new InputContainer({
@@ -84,7 +81,7 @@ export class SignUp extends Block<SignInProps> {
             id: 'password',
             error: 'От 8 до 40 символов, одна заглавная буква и цифра',
             value: '',
-            isValid: true,
+            isValid: true
         });
 
         this.children.inputPassword2 = new InputContainer({
@@ -94,7 +91,7 @@ export class SignUp extends Block<SignInProps> {
             id: 'password2',
             error: 'От 8 до 40 символов, одна заглавная буква и цифра',
             value: '',
-            isValid: true,
+            isValid: true
         });
 
         this.children.link = new Link({
@@ -111,7 +108,7 @@ export class SignUp extends Block<SignInProps> {
         const values = Object
             .values(this.children)
             .filter(child => child instanceof InputContainer && child.props.name !== 'password2')
-            .map((child: any) => {
+            .map((child: InputContainer) => {
                 if (!child.props.isValid || child.props.value === '') {
                     isValid = false;
                 }

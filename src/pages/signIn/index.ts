@@ -4,17 +4,13 @@ import {Button} from "../../components/button";
 import {Link} from "../../components/link";
 import styles from '../index.module.css';
 import stylesGlobal from '../../index.module.css';
-import {InputContainer, } from "../../components/inputContainer";
+import {InputContainer } from "../../components/inputContainer";
 import AuthController from "../../controllers/AuthController";
 import {SignupData} from "../../api/AuthAPI";
 
-
-interface SignInProps {
-}
-
-export class SignIn extends Block<SignInProps> {
-    constructor(props?: SignInProps) {
-        super('div', props)
+export class SignIn extends Block {
+    constructor() {
+        super('div')
         this.element?.classList.add(stylesGlobal.main)
     }
 
@@ -35,7 +31,7 @@ export class SignIn extends Block<SignInProps> {
             id: 'login',
             error: 'От 3 до 20 символов, латиница, может содержать цифры',
             value: '',
-            isValid: true,
+            isValid: true
         });
 
         this.children.inputPassword = new InputContainer({
@@ -45,7 +41,7 @@ export class SignIn extends Block<SignInProps> {
             id: 'password',
             error: 'От 8 до 40 символов, одна заглавная буква и цифра',
             value: '',
-            isValid: true,
+            isValid: true
         });
 
         this.children.link = new Link({

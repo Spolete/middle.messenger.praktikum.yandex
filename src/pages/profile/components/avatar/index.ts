@@ -33,7 +33,7 @@ export class Avatar extends Block<AvatarProps> {
                 events: {
                     change: (event: Event): void => {
                         event.preventDefault()
-                    },
+                    }
                 }
             })
             this.children.input.getContent().classList.add(styles['input-attach'])

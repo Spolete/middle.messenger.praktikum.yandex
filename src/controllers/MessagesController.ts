@@ -46,7 +46,7 @@ class MessagesController {
 
         socket.send({
             type: 'message',
-            content: message,
+            content: message
         });
     }
 

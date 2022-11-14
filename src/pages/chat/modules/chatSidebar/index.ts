@@ -4,12 +4,9 @@ import styles from './chatSidebar.module.css';
 import {ChatSidebarHeader} from "../../components/chatSidebarHeader";
 import {ChatSidebarCards} from "../chatSidebarCards";
 
-interface ChatSidebarProps {}
-
-
-export class ChatSidebar extends Block<ChatSidebarProps> {
-    constructor(props?: ChatSidebarProps) {
-        super('div', props)
+export class ChatSidebar extends Block {
+    constructor() {
+        super('div')
         this.element?.classList.add(styles['chat-sidebar'])
     }
 

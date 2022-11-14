@@ -28,7 +28,7 @@ class ProfileChangeInfoBase extends Block<ProfileChangeInfoProps> {
     init() {
         this.children.avatar = new Avatar({
             name: this.props.user.first_name,
-            change: true,
+            change: true
         })
         this.children.rowChangeEmail = new RowChange({
             title: 'Почта',
@@ -38,7 +38,7 @@ class ProfileChangeInfoBase extends Block<ProfileChangeInfoProps> {
             name: 'email',
             error: 'Это поле должно содержать email в формате example@site.com',
             value: this.props.user.email,
-            isValid: true,
+            isValid: true
         })
         this.children.rowChangeLogin = new RowChange({
             title: 'Логин',
@@ -48,7 +48,7 @@ class ProfileChangeInfoBase extends Block<ProfileChangeInfoProps> {
             name: 'login',
             error: 'От 3 до 20 символов, латиница, может содержать цифры',
             value: this.props.user.login,
-            isValid: true,
+            isValid: true
         })
         this.children.rowChangeName = new RowChange({
             type: 'text',
@@ -58,7 +58,7 @@ class ProfileChangeInfoBase extends Block<ProfileChangeInfoProps> {
             name: 'first_name',
             error: 'Первая буква должна быть заглавной, без пробелов и без цифр',
             value: this.props.user.first_name,
-            isValid: true,
+            isValid: true
         })
         this.children.rowChangeSurname = new RowChange({
             type: 'text',
@@ -68,7 +68,7 @@ class ProfileChangeInfoBase extends Block<ProfileChangeInfoProps> {
             name: 'second_name',
             error: 'Первая буква должна быть заглавной, без пробелов и без цифр',
             value: this.props.user.second_name,
-            isValid: true,
+            isValid: true
         })
         this.children.rowChangeNameChat = new RowChange({
             type: 'text',
@@ -78,7 +78,7 @@ class ProfileChangeInfoBase extends Block<ProfileChangeInfoProps> {
             name: 'display_name',
             error: ' ',
             value: this.props.user.display_name,
-            isValid: true,
+            isValid: true
         })
         this.children.rowChangeTel = new RowChange({
             type: 'tel',
@@ -88,7 +88,7 @@ class ProfileChangeInfoBase extends Block<ProfileChangeInfoProps> {
             name: 'phone',
             error: 'От 10 до 15 символов, состоит из цифр',
             value: this.props.user.phone,
-            isValid: true,
+            isValid: true
         })
         this.children.button = new Button({
             text: 'Сохранить',
@@ -106,7 +106,7 @@ class ProfileChangeInfoBase extends Block<ProfileChangeInfoProps> {
         const values = Object
             .values(this.children)
             .filter(child => child instanceof RowChange)
-            .map((child: any) => {
+            .map((child: RowChange) => {
                 if (!child.props.isValid) {
                     isValid = false;
                 }

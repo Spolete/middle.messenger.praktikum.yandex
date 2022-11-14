@@ -32,7 +32,7 @@ export class MessagesBase extends Block<MessagesProps> {
 
     render() {
         return this.compile(template, {
-            messages: this.props.messages,
+            messages: this.props.messages
         })
     }
 }
