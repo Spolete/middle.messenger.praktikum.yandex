@@ -16,6 +16,9 @@ export interface Message {
         content_size: number;
         upload_date: string;
     }
+    user: {
+        id: number,
+    },
 }
 
 class MessagesController {
@@ -43,7 +46,7 @@ class MessagesController {
 
         socket.send({
             type: 'message',
-            content: message,
+            content: message
         });
     }
 

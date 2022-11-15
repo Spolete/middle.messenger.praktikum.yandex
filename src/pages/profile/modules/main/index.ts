@@ -9,6 +9,14 @@ import {Link} from "../../../../components/link";
 import {withUser} from "../../../../hocs/withStore";
 
 interface ProfileProps {
+    user: {
+        first_name: string,
+        email: string,
+        login: string,
+        second_name: string,
+        display_name: string,
+        phone: string,
+    }
 }
 
 class ProfilePageBase extends Block<ProfileProps> {
@@ -24,7 +32,8 @@ class ProfilePageBase extends Block<ProfileProps> {
         this.children.rowLogin = new Row({title: 'Логин', data: this.props.user.login})
         this.children.rowName = new Row({title: 'Имя', data: this.props.user.first_name})
         this.children.rowSurname = new Row({title: 'Фамилия', data: this.props.user.second_name})
-        this.children.rowNameChat = new Row({title: 'Имя в чате', data: this.props.user.display_name || `${this.props.user.first_name} ${this.props.user.second_name}`,})
+        this.children.rowNameChat = new Row({title: 'Имя в чате', data: this.props.user.display_name
+                || `${this.props.user.first_name} ${this.props.user.second_name}`})
         this.children.rowTel = new Row({title: 'Телефон', data: this.props.user.phone})
         this.children.rowMenuInfo = new RowMenu({to: '/profileChangeInfo', title: 'Изменить данные', exit: false})
         this.children.rowMenuPassword = new RowMenu({

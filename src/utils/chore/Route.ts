@@ -1,5 +1,9 @@
 import Block from "./Block";
 
+export interface BlockConstructable<P extends Record<string, any> = any> {
+    new(props: P): Block<P>;
+}
+
 function render(query: string, block: Block) {
     const root = document.querySelector(query);
 
@@ -19,7 +23,7 @@ export default class Route {
 
     constructor(
         private pathname: string,
-        private readonly blockClass: typeof Block,
+        private readonly blockClass: BlockConstructable,
         private readonly query: string) {
     }
 
@@ -33,7 +37,7 @@ export default class Route {
 
     render() {
         if (!this.block) {
-            this.block = new this.blockClass();
+            this.block = new this.blockClass({});
 
             render(this.query, this.block);
             return;

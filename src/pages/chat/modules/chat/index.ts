@@ -7,6 +7,7 @@ import {ChatInput} from "../../components/chatInput";
 import {withSelectedChat} from "../../../../hocs/withStore";
 
 interface ChatProps {
+    selectedChat: number
 }
 
 export class ChatBase extends Block<ChatProps> {
@@ -25,7 +26,7 @@ export class ChatBase extends Block<ChatProps> {
     render() {
         return this.compile(template, {
             styles,
-            selectedChat: this.props.selectedChat,
+            selectedChat: this.props.selectedChat
         })
     }
 }

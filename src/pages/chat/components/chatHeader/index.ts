@@ -7,12 +7,15 @@ import ChatsController from "../../../../controllers/ChatsController";
 import {ButtonDelete} from "../buttonDelete";
 import {withStore} from "../../../../hocs/withStore";
 import UserController from "../../../../controllers/UserController";
+import {ChatInfo} from "../../../../api/ChatsAPI";
 
 interface ChatHeaderProps {
     name: string,
     info: string,
     avatar: string,
     text: string,
+    selectedChat: number,
+    chats: ChatInfo[],
 }
 
 class ChatHeaderBase extends Block<ChatHeaderProps> {
@@ -34,13 +37,11 @@ class ChatHeaderBase extends Block<ChatHeaderProps> {
                     const input = this.children.input as Input;
                     const login = input.getValue();
                     input.setValue('')
-                    const searhedUsers = await UserController.search({login});
-                    console.log(searhedUsers)
-                    if (searhedUsers.length === 0) {
+                    const searchedUsers = await UserController.search({login});
+                    if (searchedUsers.length === 0) {
                         return
                     }
-                    console.log(this.props.chats)
-                    for (const searhedUser of Array.from(searhedUsers)) {
+                    for (const searhedUser of Array.from(searchedUsers)) {
                         if (searhedUser.login === login) {
                             ChatsController.addUserToChat(this.props.selectedChat, searhedUser.id)
                         }

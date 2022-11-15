@@ -1,4 +1,4 @@
-import API, {UserAPI, User, PasswordData, SearchData} from '../api/UserAPI';
+import API, {UserAPI, User, PasswordData, SearchData, SearchUserData} from '../api/UserAPI';
 import store from '../utils/chore/Store';
 import router from '../utils/chore/Router';
 
@@ -29,7 +29,7 @@ class UserController {
         router.go('/profile');
     }
 
-    async search(data: SearchData) {
+    async search(data: SearchData): Promise<SearchUserData[]> {
         return await this.api.search(data);
     }
 }

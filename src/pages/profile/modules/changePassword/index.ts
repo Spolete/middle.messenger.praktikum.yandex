@@ -7,12 +7,9 @@ import {RowChange} from "../../components/rowChange";
 import {Button} from "../../../../components/button";
 import UserController from "../../../../controllers/UserController";
 
-interface ProfileChangePasswordProps {
-}
-
-export class ProfileChangePassword extends Block<ProfileChangePasswordProps> {
-    constructor(props?: ProfileChangePasswordProps) {
-        super('div', props)
+export class ProfileChangePassword extends Block {
+    constructor() {
+        super('div')
         this.element?.classList.add(globalStyles.main)
     }
 
@@ -46,7 +43,7 @@ export class ProfileChangePassword extends Block<ProfileChangePasswordProps> {
             name: 'password',
             error: 'От 8 до 40 символов, одна заглавная буква и цифра',
             value: '',
-            isValid: false,
+            isValid: false
         });
         this.children.button = new Button({
             text: 'Сохранить',
@@ -74,7 +71,7 @@ export class ProfileChangePassword extends Block<ProfileChangePasswordProps> {
         if (isValid) {
             UserController.password({
                 oldPassword: this.children.rowChangePrev.props.value,
-                newPassword: this.children.rowChangeNew.props.value,
+                newPassword: this.children.rowChangeNew.props.value
             })
         }
     }

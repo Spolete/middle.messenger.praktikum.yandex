@@ -9,6 +9,7 @@ export default function validateInput(type: string, data: string): boolean {
             break;
 
         case 'email':
+            // eslint-disable-next-line max-len
             pattern = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z](?:[a-z-]*[a-z])?\.)+[a-z](?:[a-z-]*[a-z])?$/
             break;
 

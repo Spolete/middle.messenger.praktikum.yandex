@@ -14,7 +14,7 @@ class AuthController {
         try {
             await this.api.signin(data);
             await this.fetchUser();
-            router.go('/profile');
+            router.go('/chat');
         } catch (e: any) {
             console.error(e);
         }

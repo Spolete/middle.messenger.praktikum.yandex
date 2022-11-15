@@ -1,5 +1,5 @@
-import Block from "./Block";
-import Route from "./Route";
+import Route, {BlockConstructable} from "./Route";
+
 
 export class Router {
     private static __instance: Router;
@@ -19,7 +19,7 @@ export class Router {
         Router.__instance = this;
     }
 
-    public use(pathname: string, block: typeof Block) {
+    public use(pathname: string, block: BlockConstructable) {
         const route = new Route(pathname, block, this.rootQuery);
         this.routes.push(route);
         return this;
@@ -39,7 +39,6 @@ export class Router {
         const route = this._getRoute(pathname);
 
         if (!route) {
-            this.go('/404')
             return;
         }
 

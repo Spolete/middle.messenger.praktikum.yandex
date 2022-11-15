@@ -20,7 +20,7 @@ export class ChatSidebarCardsBase extends Block<ChatSidebarCardsProps> {
         this.children.chats = this.createChats(this.props)
     }
 
-    protected componentDidUpdate(oldProps: ChatSidebarCardsProps, newProps: ChatSidebarCardsProps) {
+    protected componentDidUpdate(_oldProps: ChatSidebarCardsProps, newProps: ChatSidebarCardsProps) {
         this.children.chats = this.createChats(newProps);
         return true;
     }

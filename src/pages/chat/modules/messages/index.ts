@@ -19,7 +19,7 @@ export class MessagesBase extends Block<MessagesProps> {
         this.children.messages = this.createMessages(this.props);
     }
 
-    protected componentDidUpdate(oldProps: MessagesProps, newProps: MessagesProps) {
+    protected componentDidUpdate(_oldProps: MessagesProps, newProps: MessagesProps) {
         this.children.messages = this.createMessages(newProps);
         return true;
     }
@@ -32,7 +32,7 @@ export class MessagesBase extends Block<MessagesProps> {
 
     render() {
         return this.compile(template, {
-            messages: this.props.messages,
+            messages: this.props.messages
         })
     }
 }

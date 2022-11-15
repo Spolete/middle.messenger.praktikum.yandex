@@ -9,4 +9,6 @@ app.get('*', (req, res) => {
   res.sendFile(`${__dirname}/dist/`);
 });
 
-app.listen(PORT, () => {});
+app.listen(PORT, () => {
+  console.log(`Server started on ${PORT} port!`);
+});

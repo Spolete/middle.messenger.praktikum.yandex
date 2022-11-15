@@ -5,7 +5,7 @@ import {HTMLInputTypeAttribute} from '../../typings/types'
 import {Input} from "../input";
 import validInput from "../../utils/validateInput";
 
-interface InputContainerProps {
+export interface InputContainerProps {
     type: HTMLInputTypeAttribute,
     placeholder: string,
     name: string,
@@ -29,12 +29,12 @@ export class InputContainer extends Block<InputContainerProps> {
             name: this.props.name,
             id: this.props.id,
             events: {
-                blur: (event: Event): void => {
+                blur: (event: any): void => {
                     this.validateInput(event.target.name, event.target.value)
-                },
+                }
             }
         })
-        this.children.input.element?.classList.add(styles['input-field']);
+        this.children.input.element.classList.add(styles['input-field']);
     }
 
     validateInput(name: string, value: string) {
